@@ -1,4 +1,4 @@
-import classes from "./post-header.moduloe.css";
+import classes from "./post-header.module.css";
 import Image from "next/image";
 
 function PostHeader(props) {
