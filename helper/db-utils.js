@@ -1,8 +1,11 @@
 import { MongoClient } from "mongodb";
 
+const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.9lsnp.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
 export async function connectDatabase() {
   const client = await MongoClient.connect(
-    "mongodb+srv://pashootan:<password>@cluster0.9lsnp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    connectionString,
+    // "mongodb+srv://pashootan:<password>@cluster0.9lsnp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     { useUnifiedTopology: true }
   );
   return client;
